@@ -13,7 +13,7 @@ def reverse_string(s):
         reverse = reverse + char
     return reverse
 
-def is_palindrome(s)
+def is_palindrome(s):
     ranges = len(s)
     palindrome = False
     for i in range(0, ranges - 1):
@@ -29,13 +29,30 @@ def is_palindrome(s)
             break
     return palindrome
 
-def fib_recursive():
-    print(" ")
+def fib_recursive(n):
+    fibonacci = []
+    n1 = 0
+    n2 = 1
+    newnum = 0
+    for i in range(0, n):
+        if i == 0:
+            fibonacci.insert(i, 0)
+        elif i == 1:
+            fibonacci.insert(i, 1)
+        else:
+            newnum = n1 + n2
+            n1 = n2
+            n2 = newnum
+            fibonacci.insert(i, newnum)
+    print(fibonacci)
+    print(fibonacci[n-1])
 
 countdown(3)
 print(" ")
 revWord = reverse_string("hello")
 palAns = is_palindrome("noon")
 
-print(revWord, palAns)
+print(revWord)
+print(palAns)
+fib_recursive(15)
 
