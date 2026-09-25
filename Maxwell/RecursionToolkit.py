@@ -29,7 +29,23 @@ def is_palindrome(s):
             break
     return palindrome
 
-def fib_recursive(n):
+recursionfib = []
+num1 = 0
+num2 = 1
+original = 0
+newnum = 0
+
+def fib_recursion(n): # current focus
+    if num1 == 0:
+        original = n
+    n = n - 1
+    print(n)
+    if n == 0:
+        return
+    else:
+        fib_recursion(n)
+
+def fib_iterative(n):
     fibonacci = []
     n1 = 0
     n2 = 1
@@ -54,5 +70,8 @@ palAns = is_palindrome("noon")
 
 print(revWord)
 print(palAns)
-fib_recursive(15)
+fib_iterative(15)
+
+print(" ")
+fib_recursion(15)
 
