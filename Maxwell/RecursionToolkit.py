@@ -32,14 +32,22 @@ def is_palindrome(s):
 recursionfib = []
 num1 = 0
 num2 = 1
-original = 0
 newnum = 0
+count = 0
 
 def fib_recursion(n): # current focus
-    if num1 == 0:
-        original = n
-    n = n - 1
-    print(n)
+    if count == 0:
+        num1 = 0
+        num2 = 1
+    newnum = num1 + num2
+    num1 = num2
+    num2 = newnum
+ 
+    recursionfib.insert(count, newnum)
+
+    count += 1
+    n -= 1
+
     if n == 0:
         return
     else:
@@ -74,4 +82,5 @@ fib_iterative(15)
 
 print(" ")
 fib_recursion(15)
+print(recursionfib)
 
